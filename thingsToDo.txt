@@ -1,0 +1,37 @@
+QPushButton
+QLineEdit
+    different signals, use colors to indicate when the signal is going through, red = No signal emitted, green = signal emitted
+    holdout text
+    restrict letters/numbers/symbols
+
+QSpinBoxes
+    different signals
+
+radio buttons and checkboxes
+    explore if there's anything special
+
+QComboBox
+    extended version
+    add a treeview into QComboBox
+    add checkbox
+    edit names
+    highlight items, not only when its in the list also once its choosen
+    add modelview
+    custom signals
+
+QListView, treeview
+    add combobox
+    add checkbox
+    able to edit text
+    sort columns
+    modelview
+    QStyleDelegate
+    add button
+    add Icon
+    customSignals
+
+listWidget, treeWidget
+
+Qmenu, QActions
+
+QGraphicsView

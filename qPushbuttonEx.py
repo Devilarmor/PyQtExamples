@@ -10,10 +10,11 @@ class MyPushbuttonWin(QtGui.QMainWindow):
     def __init__(self, parent=None):
         QtGui.QMainWindow.__init__(self, parent=parent)
         uic.loadUi(uiFile, self)
+        self.connectTxtEditSignal()
         self.connectSignals()
     
     def connectSignals(self):
-        self.clear_pushButton.clicked.connect(self.clearResults)
+
         self.clicked_pushButton.clicked.connect(self.clickCmd)
         self.pushed_pushButton.pressed.connect(self.pressedCmd)
         self.released_pushButton.released.connect(self.releasedCmd)
@@ -42,15 +43,19 @@ class MyPushbuttonWin(QtGui.QMainWindow):
 #-------------------------------------------
 #   results methods
 #-------------------------------------------
+    def connectTxtEditSignal(self):
+        self.clear_pushButton.clicked.connect(self.clearResults)
+
     def clearResults(self):
         self.result_textEdit.setText("")
 
     def _updateResults(self, inputTxt):
         currentTxt = str(self.result_textEdit.toPlainText())
         if currentTxt:
-            currentTxt += "\n"
-        currentTxt += inputTxt
-        self.result_textEdit.setText(currentTxt)
+            self.result_textEdit.setText(inputTxt + "\n" + currentTxt)
+        else:
+            self.result_textEdit.setText(inputTxt)
+
 
 #-------------------------------------------
 #   customise own QPushButton
